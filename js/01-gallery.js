@@ -20,21 +20,21 @@ function createMarkupList(arr) {
     )
     .join(" ");
 }
-list.insertAdjacentHTML("afterbegin", createMarkupList(galleryItems));
+// list.insertAdjacentHTML("afterbegin", createMarkupList(galleryItems));
 
-list.addEventListener("click", clickImage);
+// list.addEventListener("click", clickImage);
 
-function clickImage(evt) {
-  evt.preventDefault();
-  const cardItem = evt.target.closest(".gallery__item");
-  if (!cardItem) {
-    return;
-  } else {
-    function presEsc(event) {
-      if (event.code === "Escape") {
-        instance.close();
-      }
-    }
+// function clickImage(evt) {
+//   evt.preventDefault();
+//   const cardItem = evt.target.closest(".gallery__item");
+//   if (!cardItem) {
+//     return;
+//   } else {
+//     function presEsc(event) {
+//       if (event.code === "Escape") {
+//         instance.close();
+//       }
+//     }
     const item = evt.target.dataset.source;
     const instance = basicLightbox.create(createModal(item), {
       onShow: () => window.addEventListener("keydown", presEsc),
